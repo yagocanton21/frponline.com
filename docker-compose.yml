@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  frp-landing:
+    build: .
+    container_name: frp_landing_page
+    restart: always
+    ports:
+      # Expõe na porta 8082 na VPS (ajuste se necessário)
+      - "8082:80"
+    networks:
+      - frp_net
+
+networks:
+  frp_net:
+    driver: bridge
