@@ -23,7 +23,7 @@ const benefits = [
 const Flyer = () => {
   return (
     <div style={{ width: '100%', minHeight: '100vh', backgroundColor: '#000', color: '#fff', fontFamily: 'var(--font-body)', overflow: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-      <div style={{ width: '100%', maxWidth: '1000px', margin: '0 auto', padding: '2rem 0', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto', padding: '2rem 0', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
 
       {/* ══════════════════════════════════════
           HERO: Badge + Title + Phones
