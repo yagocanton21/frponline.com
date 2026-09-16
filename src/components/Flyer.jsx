@@ -22,7 +22,8 @@ const benefits = [
 
 const Flyer = () => {
   return (
-    <div style={{ width: '100%', minHeight: '100vh', backgroundColor: '#000', color: '#fff', fontFamily: 'var(--font-body)', overflow: 'hidden' }}>
+    <div style={{ width: '100%', minHeight: '100vh', backgroundColor: '#000', color: '#fff', fontFamily: 'var(--font-body)', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ margin: 'auto 0', width: '100%', padding: '2rem 0' }}>
 
       {/* ══════════════════════════════════════
           HERO: Badge + Title + Phones
@@ -230,6 +231,7 @@ const Flyer = () => {
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
       </a>
 
+      </div>
     </div>
   );
 };
