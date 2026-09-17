@@ -14,8 +14,14 @@ RUN npm run build
 # Estágio 2: Servidor Nginx leve para servir os arquivos estáticos
 FROM nginx:alpine
 
-# Remove configurações padrão do Nginx e copia os arquivos compilados do Vite
+# Remove configurações padrão do Nginx
 RUN rm -rf /usr/share/nginx/html/*
+RUN rm /etc/nginx/conf.d/default.conf
+
+# Copia as novas configurações de segurança e performance do Nginx
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copia os arquivos compilados do Vite
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 # A porta padrão do Nginx no container é 80
