@@ -29,8 +29,8 @@ const Flyer = () => {
           HERO: Badge + Title + Phones
       ══════════════════════════════════════ */}
       <section style={{ position: 'relative', padding: '2rem 2rem 1.5rem' }}>
-        <div style={{ position: 'absolute', top: '-10%', right: '-5%', width: '45vw', height: '45vw', background: 'radial-gradient(circle, rgba(0,102,255,0.5) 0%, transparent 65%)', zIndex: 0, pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', bottom: '-10%', left: '-10%', width: '30vw', height: '30vw', background: 'radial-gradient(circle, rgba(0,102,255,0.25) 0%, transparent 70%)', zIndex: 0, pointerEvents: 'none' }} />
+        <div className="animate-pulse-glow" style={{ position: 'absolute', top: '-10%', right: '-5%', width: '45vw', height: '45vw', background: 'radial-gradient(circle, rgba(0,102,255,0.5) 0%, transparent 65%)', zIndex: 0, pointerEvents: 'none' }} />
+        <div className="animate-pulse-glow" style={{ position: 'absolute', bottom: '-10%', left: '-10%', width: '30vw', height: '30vw', background: 'radial-gradient(circle, rgba(0,102,255,0.25) 0%, transparent 70%)', zIndex: 0, pointerEvents: 'none' }} />
 
         <div style={{ position: 'relative', zIndex: 1 }}>
           
@@ -48,7 +48,7 @@ const Flyer = () => {
                 {/* Title */}
                 <div style={{ flex: 1 }}>
                   <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.4rem, 4.5vw, 2.8rem)', fontWeight: 900, lineHeight: 1.0, textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                    DESBLOQUEIO<br />DE CONTA<br />
+                    <span className="text-gradient-silver">DESBLOQUEIO<br />DE CONTA</span><br />
                     <span style={{ color: 'var(--accent-blue)', textShadow: '0 0 25px rgba(0,102,255,0.9)' }}>GOOGLE</span>
                   </h1>
                   <div className="hero-subtitle-banner">
@@ -73,7 +73,7 @@ const Flyer = () => {
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-end', gap: '0.5rem', paddingTop: '0.2rem', flexWrap: 'wrap' }}>
               
               {/* Celular 1 - Google */}
-              <div style={{ width: 'clamp(100px, 13vw, 130px)', height: 'clamp(190px, 24vw, 240px)', background: 'linear-gradient(160deg,#1a1a2e,#0d0d18)', borderRadius: '16px', border: '2px solid rgba(0,102,255,0.6)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', boxShadow: '0 0 30px rgba(0,102,255,0.3)', padding: '0.8rem 0.5rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+              <div className="animate-float" style={{ width: 'clamp(100px, 13vw, 130px)', height: 'clamp(190px, 24vw, 240px)', background: 'linear-gradient(160deg,#1a1a2e,#0d0d18)', borderRadius: '16px', border: '2px solid rgba(0,102,255,0.6)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', boxShadow: '0 0 30px rgba(0,102,255,0.3)', padding: '0.8rem 0.5rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ width: '38px', height: '38px', background: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '18px', color: '#4285F4', boxShadow: '0 4px 10px rgba(0,0,0,0.5)' }}>G</div>
                 <div style={{ fontSize: '0.5rem', color: '#ccc', lineHeight: 1.4 }}>
                   <div style={{ color: '#fff', fontWeight: 700, fontSize: '0.6rem' }}>Google</div>
@@ -83,7 +83,7 @@ const Flyer = () => {
               </div>
 
               {/* Celular 2 - PayJoy */}
-              <div style={{ width: 'clamp(105px, 14vw, 140px)', height: 'clamp(200px, 26vw, 260px)', background: '#ffffff', borderRadius: '16px', border: '3px solid #222', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', gap: '0.3rem', boxShadow: '0 0 30px rgba(0,200,80,0.2)', padding: '1.2rem 0.5rem 0.6rem', textAlign: 'center', position: 'relative', overflow: 'hidden', color: '#333' }}>
+              <div className="animate-float-reverse" style={{ width: 'clamp(105px, 14vw, 140px)', height: 'clamp(200px, 26vw, 260px)', background: '#ffffff', borderRadius: '16px', border: '3px solid #222', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', gap: '0.3rem', boxShadow: '0 0 30px rgba(0,200,80,0.2)', padding: '1.2rem 0.5rem 0.6rem', textAlign: 'center', position: 'relative', overflow: 'hidden', color: '#333' }}>
                 
                 {/* Status bar mock */}
                 <div style={{ position: 'absolute', top: '5px', width: '90%', display: 'flex', justifyContent: 'space-between', fontSize: '8px', color: '#000', fontWeight: 'bold' }}>
@@ -146,9 +146,12 @@ const Flyer = () => {
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '0.4rem', width: '100%' }}>
           {brands.map(b => (
-            <span key={b.name} style={{ background: b.bg, color: b.text, padding: '6px 0', borderRadius: '6px', fontSize: '0.75rem', fontWeight: 800, textAlign: 'center', boxShadow: `0 3px 10px ${b.bg}66`, display: 'block' }}>
+            <motion.span 
+              key={b.name} 
+              whileHover={{ scale: 1.05, filter: 'brightness(1.2)' }}
+              style={{ background: b.bg, color: b.text, padding: '6px 0', borderRadius: '6px', fontSize: '0.75rem', fontWeight: 800, textAlign: 'center', boxShadow: `0 3px 10px ${b.bg}66`, display: 'block', cursor: 'pointer' }}>
               {b.name}
-            </span>
+            </motion.span>
           ))}
         </div>
       </section>
@@ -157,10 +160,11 @@ const Flyer = () => {
           BENEFITS: 2×2 grid full width
       ══════════════════════════════════════ */}
       <section style={{ padding: '0 2rem 1rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '0.6rem' }}>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1 } } }} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '0.6rem' }}>
           {benefits.map((item, idx) => (
-            <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.1 * idx }}
-              style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.04)', borderRadius: '8px', padding: '0.5rem' }}
+            <motion.div key={idx} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              className="glass-panel"
+              style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', borderRadius: '8px', padding: '0.6rem' }}
             >
               <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'var(--accent-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{item.icon}</div>
               <div style={{ lineHeight: 1.15 }}>
@@ -169,7 +173,7 @@ const Flyer = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* ══════════════════════════════════════
@@ -179,7 +183,7 @@ const Flyer = () => {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1rem', alignItems: 'stretch' }}>
           
           {/* Highlight Box */}
-          <div style={{ border: '2px solid var(--accent-green)', borderRadius: '10px', padding: '0.8rem 1rem', display: 'flex', alignItems: 'center', gap: '0.6rem', background: 'rgba(0,210,58,0.06)' }}>
+          <div className="glass-panel" style={{ border: '1px solid var(--accent-green)', borderRadius: '10px', padding: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem', background: 'rgba(0,210,58,0.1)' }}>
             <CheckCircle2 size={24} color="var(--accent-green)" style={{ flexShrink: 0 }} />
             <div>
               <strong style={{ display: 'block', color: 'var(--accent-green)', fontSize: '0.85rem', textTransform: 'uppercase', lineHeight: 1.2, marginBottom: '0.2rem' }}>ACABE COM A TELA DE VERIFICAÇÃO!</strong>
