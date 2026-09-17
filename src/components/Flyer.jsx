@@ -28,7 +28,7 @@ const Flyer = () => {
       {/* ══════════════════════════════════════
           HERO: Badge + Title + Phones
       ══════════════════════════════════════ */}
-      <section style={{ position: 'relative', padding: '2rem 2rem 1.5rem', overflow: 'hidden' }}>
+      <section style={{ position: 'relative', padding: '2rem 2rem 1.5rem' }}>
         <div style={{ position: 'absolute', top: '-10%', right: '-5%', width: '45vw', height: '45vw', background: 'radial-gradient(circle, rgba(0,102,255,0.5) 0%, transparent 65%)', zIndex: 0, pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', bottom: '-10%', left: '-10%', width: '30vw', height: '30vw', background: 'radial-gradient(circle, rgba(0,102,255,0.25) 0%, transparent 70%)', zIndex: 0, pointerEvents: 'none' }} />
 
@@ -43,7 +43,7 @@ const Flyer = () => {
 
 
               {/* Title & Logo Row */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '0.5rem' }}>
+              <div className="hero-header">
                 
                 {/* Title */}
                 <div style={{ flex: 1 }}>
@@ -51,8 +51,8 @@ const Flyer = () => {
                     DESBLOQUEIO<br />DE CONTA<br />
                     <span style={{ color: 'var(--accent-blue)', textShadow: '0 0 25px rgba(0,102,255,0.9)' }}>GOOGLE</span>
                   </h1>
-                  <div style={{ background: 'var(--accent-blue)', padding: '0.4rem 0.8rem', borderRadius: '5px', transform: 'skewX(-4deg)', display: 'inline-block', boxShadow: '0 4px 18px rgba(0,102,255,0.5)' }}>
-                    <span style={{ transform: 'skewX(4deg)', display: 'inline-block', fontWeight: 800, fontSize: '0.55rem', textTransform: 'uppercase', lineHeight: 1.3 }}>
+                  <div className="hero-subtitle-banner">
+                    <span className="hero-subtitle-text">
                       LIBERE SEU CELULAR E<br />VOLTE A USAR SEM LIMITES!
                     </span>
                   </div>
