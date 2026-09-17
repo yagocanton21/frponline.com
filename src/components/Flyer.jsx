@@ -48,7 +48,7 @@ const Flyer = () => {
                 {/* Title */}
                 <div style={{ flex: 1 }}>
                   <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.4rem, 4.5vw, 2.8rem)', fontWeight: 900, lineHeight: 1.0, textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                    <span className="text-gradient-silver">DESBLOQUEIO<br />DE CONTA</span><br />
+                    DESBLOQUEIO<br />DE CONTA<br />
                     <span style={{ color: 'var(--accent-blue)', textShadow: '0 0 25px rgba(0,102,255,0.9)' }}>GOOGLE</span>
                   </h1>
                   <div className="hero-subtitle-banner">
@@ -168,8 +168,8 @@ const Flyer = () => {
             >
               <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'var(--accent-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{item.icon}</div>
               <div style={{ lineHeight: 1.15 }}>
-                <strong style={{ display: 'block', fontSize: '0.65rem' }}>{item.title}</strong>
-                <span style={{ fontSize: '0.55rem', color: '#bbb' }}>{item.sub}</span>
+                <strong style={{ display: 'block', fontSize: '0.85rem' }}>{item.title}</strong>
+                <span style={{ fontSize: '0.72rem', color: '#bbb' }}>{item.sub}</span>
               </div>
             </motion.div>
           ))}
